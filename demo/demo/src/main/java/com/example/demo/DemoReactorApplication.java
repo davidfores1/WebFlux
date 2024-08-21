@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.creacion.Creacion;
 import com.example.model.Persona;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,10 @@ public class DemoReactorApplication implements CommandLineRunner {
         mono();
         flux();
         fluxMono();
+
+        Creacion creacion = new Creacion();
+        creacion.range();
+        creacion.repeat();
     }
 
     public void mono() {
