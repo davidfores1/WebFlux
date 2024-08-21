@@ -11,18 +11,22 @@ import reactor.core.publisher.Mono;
 @SpringBootApplication
 public class DemoReactorApplication implements CommandLineRunner {
 
-	private static final Logger log = LoggerFactory.getLogger(DemoReactorApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(DemoReactorApplication.class);
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoReactorApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoReactorApplication.class, args);
+    }
 
-	@Override
-	public void run(String... args) throws Exception {
-		reactor();
-	}
+    @Override
+    public void run(String... args) throws Exception {
+        reactor();
+    }
 
-	public void reactor(){
-		Mono.just(new Persona(1, "David", 25)).subscribe(p -> log.info(p.toString()));
-	}
-}
+    public void reactor() {
+        Mono.just(new Persona(1, "David", 25))
+                .doOnNext(persona -> {
+                    persona.setEdad(persona.getEdad() + 6);
+                })
+                .subscribe(p -> log.info(p.toString()));
+    }
+   }
