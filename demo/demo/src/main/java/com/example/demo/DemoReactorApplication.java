@@ -1,6 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.creacion.Creacion;
+import com.example.demo.operador.creacion.Creacion;
+import com.example.demo.operador.transformacion.Transformacion;
 import com.example.model.Persona;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,11 @@ public class DemoReactorApplication implements CommandLineRunner {
         Creacion creacion = new Creacion();
         creacion.range();
         creacion.repeat();
+
+        Transformacion transformacion = new Transformacion();
+        transformacion.map();
+        transformacion.flatMap();
+        transformacion.groupBy();
     }
 
     public void mono() {

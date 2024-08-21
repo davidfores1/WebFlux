@@ -1,4 +1,4 @@
-package com.example.demo.creacion;
+package com.example.demo.operador.creacion;
 
 import com.example.model.Persona;
 import reactor.core.publisher.Flux;
