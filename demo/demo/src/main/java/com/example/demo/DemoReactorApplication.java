@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.filtrado.Filtrado;
 import com.example.demo.operador.creacion.Creacion;
 import com.example.demo.operador.transformacion.Transformacion;
 import com.example.model.Persona;
@@ -37,6 +38,12 @@ public class DemoReactorApplication implements CommandLineRunner {
         transformacion.map();
         transformacion.flatMap();
         transformacion.groupBy();
+
+        Filtrado filtrado = new Filtrado();
+        filtrado.filter();
+        filtrado.distinct();
+        filtrado.take();
+        filtrado.takeLast();
     }
 
     public void mono() {
